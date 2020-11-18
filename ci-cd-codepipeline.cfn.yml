@@ -48,7 +48,7 @@ Parameters:
 
   CodeBuildDockerImage:
     Type: String
-    Default: aws/codebuild/docker:17.09.0
+    Default: aws/codebuild/docker:19.03.0
     Description: AWS CodeBuild Docker optimized image
     MinLength: 3
     MaxLength: 100
@@ -161,7 +161,7 @@ Resources:
 
       Handler: index.handler
       Role: !GetAtt CustomResourceLambdaExecutionRole.Arn
-      Runtime: python2.7
+      Runtime: python3.7
       Timeout: 300
 
   CustomResourceLambdaExecutionRole:
