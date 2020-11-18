@@ -1,4 +1,4 @@
-export JWT_SECRET='myjwtsecret'
+export JWT_SECRET='hawaii'
 export LOG_LEVEL=DEBUG
 
 python main.py
@@ -17,3 +17,5 @@ aws iam put-role-policy --role-name UdacityFlaskDeployCBKubectlRole --policy-nam
 
 # create eks
 eksctl create cluster --name eks-test
+
+aws ssm put-parameter --name JWT_SECRET --value "hawaii" --type SecureString
