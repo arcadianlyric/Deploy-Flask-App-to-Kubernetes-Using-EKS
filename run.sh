@@ -27,3 +27,10 @@ echo '{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Action": [
 aws iam put-role-policy --role-name UdacityFlaskDeployCBKubectlRole --policy-name eks-describe --policy-document file://./iam-role-policy
 
 kubectl get -n kube-system configmap/aws-auth -o yaml > ./aws-auth-patch.yml
+
+
+export TOKEN=`curl -d '{"email":"yingcai202012@gmail.com","password":"webshots4047A"}' -H "Content-Type: application/json" -X POST a49fc73d9cc9f445eb17cb7b98b1659b-820285517.us-west-2.elb.amazonaws.com/auth  | jq -r '.token'`
+curl --request GET 'a49fc73d9cc9f445eb17cb7b98b1659b-820285517.us-west-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
+
+# curl --request GET 'a49fc73d9cc9f445eb17cb7b98b1659b-820285517.us-west-2.elb.amazonaws.com'
+# return = 'healthy'
