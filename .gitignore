@@ -1,4 +1,4 @@
-
+.DS_Store
 new_user_credentials.csv
 buildspec_old.yml
 simple_jwt_api.yml
